@@ -249,13 +249,11 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Home</li>
-                        <li> <a class="has-arrow  " href="admin" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard <span></span></span></a>
-                            <ul aria-expanded="false" class="collapse">
-                               
-                            </ul>
+                        <li> <a class="has-arrow  " href="admin" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
+                            
                         </li>
                         <li class="nav-label">Apps</li>
-                        <li> <a class="has-arrow  " href="categorie"  aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Catégories</span></a>
+                        <li> <a class="has-arrow  " href="categorie"  aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Catégorie</span></a>
                            
                         </li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Produits</span></a>

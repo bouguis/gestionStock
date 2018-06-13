@@ -34,6 +34,16 @@ public class Categorie {
 	}
 	
 	
+	
+	/**
+	 * @param libelle
+	 */
+	public Categorie(String libelle) {
+		super();
+		this.libelle = libelle;
+	}
+
+
 	//Getters and Sertter
 
 
