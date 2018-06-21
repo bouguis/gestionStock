@@ -19,40 +19,53 @@ import sn.objis.gestionStock.service.IServiceCategorieImpl;
 @WebServlet("/categorie")
 public class CategorieServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public CategorieServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public CategorieServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// REcuperation des donnees saisies
+		String libelleRecup = request.getParameter("categorie");
+		// Etablissement de la connexion
+		Connection con = (Connection) getServletContext().getAttribute("connexion");
+		IServiceCategorieImpl service = new IServiceCategorieImpl(con);
+
 		
+
+		// Ajout des donnees dans un scope
+		request.setAttribute("categorie", service.getAll());
 		RequestDispatcher rd = request.getRequestDispatcher("admin/categorie.jsp");
 		rd.forward(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//REcuperation des donnees saisies
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// REcuperation des donnees saisies
 		String libelleRecup = request.getParameter("categorie");
-		//Etablissement de la connexion
+		// Etablissement de la connexion
 		Connection con = (Connection) getServletContext().getAttribute("connexion");
 		IServiceCategorieImpl service = new IServiceCategorieImpl(con);
-		
+
 		Categorie cat = new Categorie(libelleRecup);
 		service.add(cat);
-		
-		//Ajout des donnees dans un scope
+
+		// Ajout des donnees dans un scope
 		request.setAttribute("categorie", service.getAll());
-		//Redirection vers la page creation catégorie
+		// Redirection vers la page creation catégorie
 		RequestDispatcher rd = request.getRequestDispatcher("admin/categorie.jsp");
 		rd.forward(request, response);
 	}

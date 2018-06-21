@@ -338,7 +338,7 @@
 
 			<!-- End Container fluid  -->
 
-			<div class="col-lg-8">
+			<div class="col-lg-6">
 				<div class="card">
 					<div class="card-title">
 						<h4>Table Categorie</h4>
@@ -352,8 +352,7 @@
 										<tr>
 											<th>ID</th>
 											<th>CATEGORIE</th>
-											<th>ACTION</th>
-
+											<th></th>
 
 										</tr>
 									</thead>
@@ -361,9 +360,11 @@
 										<c:forEach items="${categorie}" var="rep">
 
 											<tr>
-												<td>${rep.idCategorie}</td>
-												<td>${rep.libelle}</td>
-												<td></td>
+												<td><span class="badge badge-danger">${rep.idCategorie}</span></td>
+												<td><span class="badge badge-primary">${rep.libelle}</span></td>
+												<td>
+												
+												</td>
 
 
 											</tr>
